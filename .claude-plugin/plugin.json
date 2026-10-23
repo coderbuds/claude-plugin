@@ -1,7 +1,7 @@
 {
   "name": "coderbuds",
   "displayName": "Coderbuds",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Checks a change against how your team ships before you open the pull request, reports how much of it an agent wrote, and answers what is blocking the team's queue.",
   "author": {
     "name": "Coderbuds",
@@ -11,7 +11,13 @@
   "homepage": "https://coderbuds.com/docs/mcp",
   "repository": "https://github.com/coderbuds/claude-plugin",
   "license": "MIT",
-  "keywords": ["pull-requests", "code-review", "dora-metrics", "engineering-metrics", "github"],
+  "keywords": [
+    "pull-requests",
+    "code-review",
+    "dora-metrics",
+    "engineering-metrics",
+    "github"
+  ],
   "icon": "./logo.png",
   "documentationUrl": "https://coderbuds.com/docs/mcp",
   "supportUrl": "https://coderbuds.com/docs/faq",

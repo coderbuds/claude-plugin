@@ -16,6 +16,7 @@ You need a Coderbuds account with your repositories connected. Coderbuds support
 | Skill `check-change-fit` | Before a pull request: runs `git diff --numstat`, calls `assess-change-fit-tool`, and records a decision when the change goes up anyway. |
 | Skill `report-ai-usage` | After a pull request: calls `report-ai-usage-tool` with the pull request number. |
 | Skill `team-status` | Picks the right Coderbuds tool for "what's blocking us?" questions. |
+| Skill `set-up-repository` | Run `/coderbuds:set-up-repository` in one of your team's repositories. It opens one pull request that writes the two moments into the repository's agent guidance and enables this plugin in `.claude/settings.json`, so teammates on Claude Code are offered it. |
 | Hooks | After `git push`, and after a pull request is opened with `gh pr create` or a GitHub MCP tool, add one sentence to Claude's context naming the matching skill. Claude Code and Cowork only. |
 
 ## What it sends, and where
@@ -29,12 +30,22 @@ You need a Coderbuds account with your repositories connected. Coderbuds support
 
 From the Claude directory: open **Customize > Plugins > Discover** in Claude, or run `/plugin directory` in Claude Code, and search for Coderbuds.
 
-From this repository, in Claude Code:
+From this repository, in your terminal:
 
 ```bash
+claude plugin install coderbuds --marketplace coderbuds/claude-plugin
+```
+
+Or inside a Claude Code session:
+
+```text
 /plugin marketplace add coderbuds/claude-plugin
 /plugin install coderbuds@coderbuds
 ```
+
+Then run `/mcp`, choose `plugin:coderbuds:coderbuds` and select Authenticate.
+
+Using Codex, Cursor or another MCP client instead? Add `https://coderbuds.com/mcp/insights` as a remote MCP server. Instructions for each are at [coderbuds.com/docs/mcp](https://coderbuds.com/docs/mcp).
 
 If you already added Coderbuds by hand with `claude mcp add`, remove that entry with `claude mcp remove coderbuds` so Claude sees one set of tools, not two.
 
