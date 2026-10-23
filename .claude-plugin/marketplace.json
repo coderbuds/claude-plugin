@@ -1,0 +1,15 @@
+{
+  "name": "coderbuds",
+  "description": "The Coderbuds plugin for Claude Code, from the Coderbuds team.",
+  "owner": {
+    "name": "Coderbuds",
+    "email": "support@coderbuds.com"
+  },
+  "plugins": [
+    {
+      "name": "coderbuds",
+      "source": "./",
+      "description": "Checks a change against how your team ships before you open the pull request, reports how much of it an agent wrote, and answers what is blocking the team's queue."
+    }
+  ]
+}

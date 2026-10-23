@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git push*)",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/after-push.sh"
+          },
+          {
+            "type": "command",
+            "if": "Bash(gh pr create*)",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/after-pull-request.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*__create_pull_request",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/after-pull-request.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
